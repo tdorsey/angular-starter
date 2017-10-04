@@ -1,0 +1,20 @@
+<div>
+  <h1 x-large class="sample-content">Login to PlexSync</h1>
+  <div>
+    <h4>Login</h4>
+
+    <form (ngSubmit)="onLogin(username, password)" autocomplete="off">
+
+        <input type="text" name="txtUsername" [(ngModel)]="username" autofocus>
+        <input type="password" name="txtUsername" [(ngModel)]="password">
+        
+
+      <button>Login</button>
+    </form>
+ 
+
+    <pre>{{ loginMessage }}</pre>
+
+  </div>
+
+</div>
