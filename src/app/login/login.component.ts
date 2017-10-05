@@ -6,7 +6,7 @@ import {
 import { AppState } from '../app.service';
 import { Title } from './title';
 import { XLargeDirective } from './x-large';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   /**
@@ -35,20 +35,21 @@ export class LoginComponent implements OnInit {
    * Set our default values
    */
   public localState = { value: '' };
+  public username: String;
+  public password: String;
+
+  private http: HttpClient;
   /**
    * TypeScript public modifiers
    */
   constructor(
     public appState: AppState,
     public title: Title,
-    public username: String,
-    public password: String,
- 
-    private http: Http
+   
   ) {}
 
   onLogin(username, password) {
-    var _loginURL = "https://example.com"
+    var _loginURL = ""
     let body = new URLSearchParams();
     body.set('username', username);
     body.set('password', password);

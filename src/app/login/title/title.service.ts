@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 @Injectable()
 export class Title {
@@ -7,7 +7,7 @@ export class Title {
   public value = 'Login to PlexSync';
 
   constructor(
-    public http: Http
+    public http: HttpClientModule
   ) {}
 
   public getData() {
