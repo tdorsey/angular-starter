@@ -43,17 +43,17 @@ export class LoginComponent implements OnInit {
     public title: Title,
     public username: String,
     public password: String,
-    private _loginURL = 'https://plexsync.rtd3.me/servers',
+ 
     private http: Http
   ) {}
 
   onLogin(username, password) {
-    
+    var _loginURL = "https://example.com"
     let body = new URLSearchParams();
     body.set('username', username);
     body.set('password', password);
     
-    this.http.post(this._loginURL, body)
+    this.http.post(_loginURL, body)
   }
 
   public ngOnInit() {
